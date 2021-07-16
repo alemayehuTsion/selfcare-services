@@ -14,6 +14,7 @@ export class OffersListComponent implements OnInit {
   colors = ['#29AFCF','#BEC3C7', '#995DFF', '#F175B1' ];
   offerDetails : OfferDetail[] = [];
   showDetail: boolean[] = [];
+  loading:boolean = false;
   constructor(private service: OffersService) {};
 
   ngOnInit(): void {
@@ -21,8 +22,10 @@ export class OffersListComponent implements OnInit {
   }
 
   getOffers(): void {
+    this.loading = true;
     this.service.getOffers().subscribe((result) => {
       this.offers = result.offers;
+      this.loading = false;
     });
   }
   trackByFn(index: any, item: { id: any }): any {

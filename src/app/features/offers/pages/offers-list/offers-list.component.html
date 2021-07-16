@@ -7,12 +7,16 @@
         <p class="subtitle pt-4">Available offers</p>
 
       </div>
-      <div class="w-1/2 flex justify-start">
-      </div>
+
     </div>
 
   </div>
-  <div class="flex flex-row flex-wrap container ">
+  <div class="w-full flex justify-center" *ngIf="loading">
+    <span class="spinner spnr">
+      Loading...
+  </span>
+  </div>
+  <div class="flex flex-row flex-wrap container " *ngIf="!loading">
     <div class="p-card m-6"
      style="width: 315px;"
       *ngFor="let off of offers; trackBy: trackByFn;let i = index">
