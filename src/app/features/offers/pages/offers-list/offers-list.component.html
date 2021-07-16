@@ -33,6 +33,9 @@
   </div>
   <div class="p-body border border-2" *ngIf="showDetail[off.id]">
     <div class="feature">
+      <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"  *ngIf="detailLoading">
+        <!-- ... -->
+      </svg>
       <div *ngFor="let detail of offerDetails">
         <div class="sublable"><strong style="font-weight: 600;">{{detail.name}}</strong></div>
         <div class="sublable text-xs pb-2" style="font-size: 14px;">Type :  {{detail.type}}</div>

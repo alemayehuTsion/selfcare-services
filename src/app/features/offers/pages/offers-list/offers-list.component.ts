@@ -15,6 +15,7 @@ export class OffersListComponent implements OnInit {
   offerDetails : OfferDetail[] = [];
   showDetail: boolean[] = [];
   loading:boolean = false;
+  detailLoading : boolean = false;
   constructor(private service: OffersService) {};
 
   ngOnInit(): void {
@@ -36,9 +37,11 @@ export class OffersListComponent implements OnInit {
   }
 
   detail(offer:Offer){
+    this.detailLoading = true;
     this.showDetail[offer.id] = true;
     this.service.getOfferDetails(offer.id).subscribe((result)=>{
         this.offerDetails = result.subscriptions;
+        this.detailLoading = false;
     })
   }
 
