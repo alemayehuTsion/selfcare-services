@@ -11,23 +11,27 @@ import { UserCredential } from '../../models/user-credential.model';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  loading : boolean = false;
-  message:string = "";
+  loading: boolean = false;
+  message: string = '';
 
-  constructor(fb: FormBuilder,private service : LoginService,private router :Router) {
-    this.form = this.createFormGroup(fb)
-   }
+  constructor(
+    fb: FormBuilder,
+    private service: LoginService,
+    private router: Router
+  ) {
+    this.form = this.createFormGroup(fb);
+  }
 
   ngOnInit(): void {}
 
   createFormGroup(fb: FormBuilder) {
     return fb.group({
       username: [null, [Validators.required, Validators.minLength(3)]],
-      password: [null, Validators.required],
+      password: [null, Validators.required]
     });
   }
 
-  login(){
+  login() {
     debugger;
     if (this.form.valid) {
       this.loading = true;
@@ -40,21 +44,20 @@ export class LoginComponent implements OnInit {
       this.service.login(user).subscribe(
         (result) => {
           this.loading = false;
-          localStorage.setItem("a_token", result.authToken);
-          this.router.navigate(["/offers"]);
+          localStorage.setItem('a_token', result.authToken);
+          this.router.navigate(['/offers']);
         },
-        error => {
+        (error) => {
           this.loading = false;
           if (error.status === 401) {
             this.message = 'Incorrect username or Password';
           } else {
-            this.message = 'Sorry an error occurred. Please try again.'
+            this.message = 'Sorry an error occurred. Please try again.';
           }
         }
-      )
-    }else{
+      );
+    } else {
       return;
     }
   }
-
 }

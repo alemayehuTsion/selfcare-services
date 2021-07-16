@@ -4,14 +4,8 @@ import { OffersRoutingModule } from './offers-routing.module';
 import { OffersListComponent } from './pages/offers-list/offers-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    OffersListComponent
-  ],
-  imports: [
-    SharedModule,
-    OffersRoutingModule
-  ]
+  declarations: [OffersListComponent],
+  imports: [SharedModule, OffersRoutingModule]
 })
-export class OffersModule { }
+export class OffersModule {}

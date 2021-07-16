@@ -8,14 +8,14 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   {
     path: 'login',
-    component:LoginLayoutComponent,
+    component: LoginLayoutComponent,
     loadChildren: () =>
       import('./features/login/login.module').then((m) => m.LoginModule)
   },
   {
     path: 'offers',
     canActivate: [AuthGuard],
-    component:DefaultComponent,
+    component: DefaultComponent,
     loadChildren: () =>
       import('./features/offers/offers.module').then((m) => m.OffersModule)
   }

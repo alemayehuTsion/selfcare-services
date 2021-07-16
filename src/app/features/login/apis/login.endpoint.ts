@@ -1,5 +1,5 @@
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
 export const LoginEndpoint = {
-  login: `${environment.urls.api}/login`,
+  login: `${environment.urls.api}/login`
 };

@@ -8,6 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [DefaultComponent, LoginLayoutComponent],
   imports: [SharedModule],
-  exports:[LoginLayoutComponent]
+  exports: [LoginLayoutComponent]
 })
 export class LayoutModule {}
