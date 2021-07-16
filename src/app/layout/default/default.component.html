@@ -1,1 +1,19 @@
-<p>default works!</p>
+<div class="container mx-auto flex justify-between h-12 header">
+  <div class="flex items-center ml-5">
+    <div>
+      <span class="text-white"><a [routerLink]="['/offers']">Selfcare Services</a></span>
+    </div>
+  </div>
+
+  <div class="flex items-center text-primary-50">
+    <div >
+      <button
+          class="rounded-full text-white pr-3" [routerLink]="['/login']" (click)="signOut()">
+          {{ 'Sign out' }}
+        </button>
+    </div>
+  </div>
+</div>
+<div class="container mx-auto">
+<router-outlet></router-outlet>
+</div>
