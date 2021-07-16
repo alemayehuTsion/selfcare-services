@@ -15,9 +15,9 @@
   <div class="flex flex-row flex-wrap container ">
     <div class="p-card m-6"
      style="width: 315px;"
-      *ngFor="let off of offers; trackBy: trackByFn">
+      *ngFor="let off of offers; trackBy: trackByFn;let i = index">
   <div class="p-header"
-    [ngStyle]="{'background': colors[3]}">
+    [ngStyle]="{'background': colors[i%4]}">
     {{ off.name }}
   </div>
 

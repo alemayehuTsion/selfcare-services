@@ -11,7 +11,7 @@ import { OfferDetail } from '../../models/offersdetail.model';
 export class OffersListComponent implements OnInit {
   offers: Offer[] = [];
 
-  colors = ['#BEC3C7', '#995DFF', '#F175B1', '#29AFCF'];
+  colors = ['#29AFCF','#BEC3C7', '#995DFF', '#F175B1' ];
   offerDetails : OfferDetail[] = [];
   showDetail: boolean[] = [];
   constructor(private service: OffersService) {};
