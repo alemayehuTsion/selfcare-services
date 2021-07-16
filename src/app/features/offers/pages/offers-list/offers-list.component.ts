@@ -47,5 +47,6 @@ export class OffersListComponent implements OnInit {
 
   back(offer:Offer){
     this.showDetail[offer.id] = false;
+    this.offerDetails =[];
   }
 }
